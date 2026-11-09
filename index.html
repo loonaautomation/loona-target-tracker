@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="msvalidate.01" content="668EEE252F09B71CC35E95DB8F5999EF">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1566440962454692" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Daily Target Tracker for Teams — Target vs Achievement Report | Loona</title>
+<meta name="description" content="Free daily target tracker for any team, anywhere: set your own hubs, centres and columns, enter targets and done figures — pending and achievement % calculate automatically. Data stays on your device.">
+<meta name="keywords" content="target tracker, daily target report, team performance tracker, target vs achievement, branch report, sales target tracker, hub report, pending tracker">
+<link rel="canonical" href="https://loonaautomation.github.io/loona-target-tracker/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#062e2a">
+<meta property="og:title" content="Loona Target Tracker — Daily Target vs Achievement Report">
+<meta property="og:description" content="Build your own daily team report: your hubs, your centres, your columns. Pending and percentages calculate themselves. Free, private, no sign-up.">
+<meta property="og:image" content="https://loonaautomation.github.io/loona-target-tracker/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://loonaautomation.github.io/loona-target-tracker/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Target Tracker","url":"https://loonaautomation.github.io/loona-target-tracker/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free daily target-vs-achievement tracker for teams anywhere in the world — branches, sales teams, school staff and field teams. Fully customisable sections, rows and columns with automatic pending and percentage calculations. All data stays on the user's device."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Loona Automation","item":"https://loonaautomation.github.io/"},{"@type":"ListItem","position":2,"name":"Loona Target Tracker","item":"https://loonaautomation.github.io/loona-target-tracker/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Loona Target Tracker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Loona Target Tracker is completely free — no sign-up, no subscription and no limit on sections, rows or columns."}},{"@type":"Question","name":"Where is my data stored?","acceptedAnswer":{"@type":"Answer","text":"Only on your own device, in your browser's local storage. Nothing is uploaded to any server. Use the JSON backup to move your data to another phone or computer."}},{"@type":"Question","name":"Can I set my own percentage formula?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add an Auto % column and choose any two number columns — the tool calculates A ÷ B × 100 for every row and for the totals. You can also add an Auto Pending column that subtracts any column from any other."}},{"@type":"Question","name":"Can I use my own hub, centre and column names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything is yours to name: the report title, section (hub) names, row (service centre) names and every column heading. Add, rename, reorder or delete sections, rows and columns at any time, and save your layout as a named format to reuse."}},{"@type":"Question","name":"How do I send the daily report to my head office?","acceptedAnswer":{"@type":"Answer","text":"Tap PNG Image or Share to send a picture of the report — in the same yellow-and-green style as a spreadsheet — straight to WhatsApp. You can also print it, or export CSV and Excel files."}},{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. After the first load the tracker works offline, and your saved reports stay on your device."}}]}
+</script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; background: #f7f5ee; color: #1c2422; line-height: 1.55; }
+  header.site { background: #062e2a; color: #fff; text-align: center; padding: 26px 16px 20px; border-bottom: 3px solid #d4af37; }
+  header.site img { width: 72px; height: 72px; border-radius: 50%; }
+  header.site h1 { font-size: 1.7rem; color: #ffd95e; margin: 8px 0 4px; }
+  header.site .tag { font-size: .98rem; color: #e9e4cf; max-width: 640px; margin: 0 auto; }
+  header.site .privacy { margin-top: 10px; font-size: .86rem; color: #9fd8c9; font-weight: 600; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 18px 14px 8px; }
+  .card { background: #fff; border: 1px solid #e4dfcd; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(6,46,42,.05); }
+  .card h2 { font-size: 1.05rem; color: #062e2a; margin-bottom: 10px; }
+  .rowflex { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .rowflex + .rowflex { margin-top: 10px; }
+  label.lbl { font-size: .82rem; font-weight: 700; color: #556; display: block; margin-bottom: 3px; }
+  input[type="text"], input[type="number"], input[type="date"], select {
+    font: inherit; font-size: 1rem; padding: 9px 10px; border: 1.5px solid #c9c2a8; border-radius: 9px; background: #fff; color: #1c2422; min-height: 44px;
+  }
+  input:focus, select:focus { outline: 2px solid #0a6e5f; outline-offset: 1px; border-color: #0a6e5f; }
+  #reportTitle { flex: 1 1 260px; font-weight: 700; font-size: 1.08rem; }
+  .btn { font: inherit; font-weight: 700; font-size: .93rem; border: 0; border-radius: 9px; padding: 11px 16px; min-height: 44px; cursor: pointer; background: #062e2a; color: #ffd95e; }
+  .btn:hover { background: #0a443d; }
+  .btn.alt { background: #e9e4cf; color: #062e2a; border: 1.5px solid #c9c2a8; }
+  .btn.alt:hover { background: #ddd5b8; }
+  .btn.gold { background: #d4af37; color: #231a00; }
+  .btn.gold:hover { background: #e3c04c; }
+  .btn.danger { background: #f6e3e1; color: #8d2318; border: 1.5px solid #dfa49d; }
+  .btn.small { padding: 6px 10px; min-height: 34px; font-size: .82rem; border-radius: 7px; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .toolbar-label { font-size: .8rem; font-weight: 700; letter-spacing: .06em; color: #7a7460; text-transform: uppercase; margin-right: 2px; }
+  #toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: #062e2a; color: #ffe98a; padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: .95rem; box-shadow: 0 8px 24px rgba(0,0,0,.3); opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 60; max-width: 92vw; text-align: center; }
+  #toast.show { opacity: 1; }
+
+  /* ===== report tables (Excel-style) ===== */
+  .section-block { margin-bottom: 20px; }
+  .sec-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; background: #ffdf00; border: 1.5px solid #b3a100; border-bottom: 0; padding: 8px 10px; border-radius: 10px 10px 0 0; }
+  .sec-head input { flex: 1 1 200px; font-weight: 800; font-size: 1.05rem; background: transparent; border: 1.5px dashed transparent; text-align: center; }
+  .sec-head input:hover, .sec-head input:focus { background: #fffbe0; border-color: #b3a100; }
+  .table-scroll { overflow-x: auto; border: 1.5px solid #b3a100; border-radius: 0 0 10px 10px; }
+  table.report { border-collapse: collapse; width: 100%; min-width: 640px; background: #fff; }
+  table.report th, table.report td { border: 1px solid #b9c4ad; padding: 6px; text-align: center; font-size: .95rem; }
+  table.report thead th { background: #c6e0b4; font-weight: 700; }
+  table.report thead th .col-name { display: block; }
+  table.report tbody tr:nth-child(even) { background: #f4f9f0; }
+  table.report td input { width: 100%; border: 1.5px solid transparent; background: transparent; text-align: center; padding: 7px 4px; min-height: 40px; font-size: 1rem; border-radius: 6px; }
+  table.report td input:hover { border-color: #c9c2a8; }
+  table.report td input:focus { background: #fff; border-color: #0a6e5f; }
+  table.report td.txt input { text-align: left; font-weight: 600; }
+  td.auto { font-weight: 700; background: rgba(198,224,180,.25); }
+  tr.total-row td { background: #a9d18e; font-weight: 800; border-top: 2.5px solid #5d8a46; }
+  tr.total-row td.auto { background: #a9d18e; }
+  td .pct-wrap { display: flex; flex-direction: column; gap: 3px; align-items: stretch; }
+  td .pct-bar { height: 6px; background: rgba(0,0,0,.12); border-radius: 4px; overflow: hidden; }
+  td .pct-fill { height: 100%; border-radius: 4px; }
+  td.pct-good { background: #d8ecc8 !important; } td.pct-good .pct-fill { background: #3f9142; }
+  td.pct-warn { background: #fdf0c0 !important; } td.pct-warn .pct-fill { background: #d9a400; }
+  td.pct-bad  { background: #f8d7d2 !important; } td.pct-bad .pct-fill { background: #c0392b; }
+  tr.total-row td.pct-good, tr.total-row td.pct-warn, tr.total-row td.pct-bad { background: #a9d18e !important; }
+  td.rowtools, th.rowtools { width: 44px; background: #fbfaf5; }
+  .icon-btn { font: inherit; border: 1.5px solid #c9c2a8; background: #fff; border-radius: 7px; min-width: 34px; min-height: 34px; cursor: pointer; font-weight: 700; color: #8d2318; }
+  .icon-btn:hover { background: #f6e3e1; }
+  .grand { background: #062e2a; color: #fff; border-radius: 12px; padding: 14px 16px; }
+  .grand h2 { color: #ffd95e; }
+  .grand .g-grid { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+  .grand .g-item { font-size: .95rem; }
+  .grand .g-item b { display: block; font-size: 1.25rem; color: #fff; }
+  .grand .g-item span { color: #bcd8d0; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+
+  /* ===== panels ===== */
+  .panel { display: none; }
+  .panel.open { display: block; }
+  .col-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 0; border-bottom: 1px dashed #ddd5ba; }
+  .col-row input[type="text"] { flex: 1 1 150px; }
+  .col-row select { max-width: 190px; }
+  .col-type { font-size: .78rem; font-weight: 800; background: #e9e4cf; border-radius: 6px; padding: 3px 8px; color: #5c563f; white-space: nowrap; }
+  .hint { font-size: .85rem; color: #667; margin-top: 8px; }
+  .fmt-row { display: flex; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px dashed #ddd5ba; flex-wrap: wrap; }
+  .fmt-row b { flex: 1 1 140px; }
+
+  /* ===== content sections ===== */
+  section.content { max-width: 860px; margin: 30px auto; padding: 24px 20px; background: #fff; border: 1px solid #e4dfcd; border-radius: 14px; }
+  section.content h2 { color: #062e2a; margin: 0 0 12px; font-size: 1.3rem; }
+  section.content h3 { color: #075e52; margin: 16px 0 4px; font-size: 1.02rem; }
+  section.content p, section.content li { font-size: .97rem; }
+  section.content ol, section.content ul { padding-left: 22px; }
+  #loona-legal-bar { background: #062e2a; color: #f3e9c8; text-align: center; padding: 14px 12px; font-size: 14px; line-height: 1.6; border-top: 3px solid #d4af37; margin-top: 26px; }
+  #loona-legal-bar a { color: #ffd95e; margin: 0 8px; }
+  @media (max-width: 640px) {
+    header.site h1 { font-size: 1.4rem; }
+    .btn { padding: 11px 12px; }
+  }
+  @media print {
+    body { background: #fff; }
+    header.site, .no-print, #toast, section.content, #loona-legal-bar { display: none !important; }
+    .wrap { max-width: none; padding: 0; }
+    .card { border: 0; box-shadow: none; padding: 0; }
+    .table-scroll { overflow: visible; }
+    table.report { min-width: 0; }
+    table.report td input { border: 0; }
+    .sec-head input { border: 0; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5L43M13ZYT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5L43M13ZYT');
+</script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "z599jkwoy9");
+</script>
+</head>
+<body>
+<header class="site">
+  <img src="icon-192.png" alt="Loona Automation logo">
+  <h1>Loona Target Tracker</h1>
+  <p class="tag">Your daily target-vs-achievement report — your hubs, your centres, your columns. Enter target and done; pending and percentages calculate themselves.</p>
+  <p class="privacy">🔒 Your data never leaves your device — no server, no sign-up.</p>
+</header>
+
+<div class="wrap">
+  <!-- ===== report controls ===== -->
+  <div class="card no-print">
+    <div class="rowflex">
+      <div style="flex:1 1 260px">
+        <label class="lbl" for="reportTitle">Report title</label>
+        <input type="text" id="reportTitle" value="Daily Target Report" autocomplete="off">
+      </div>
+      <div>
+        <label class="lbl" for="reportDate">Report date</label>
+        <div class="rowflex" style="flex-wrap:nowrap">
+          <button class="btn alt small" id="prevDayBtn" type="button" title="Previous day">◀</button>
+          <input type="date" id="reportDate">
+          <button class="btn alt small" id="nextDayBtn" type="button" title="Next day">▶</button>
+        </div>
+      </div>
+    </div>
+    <div class="rowflex">
+      <span class="toolbar-label">Day</span>
+      <button class="btn" id="newDayBtn" type="button">New Day</button>
+      <button class="btn alt" id="copyTargetsBtn" type="button">Copy Yesterday's Targets</button>
+    </div>
+    <div class="rowflex">
+      <span class="toolbar-label">Build</span>
+      <button class="btn alt" id="addSectionBtn" type="button">+ Add Section</button>
+      <button class="btn alt" id="columnsBtn" type="button">Columns</button>
+      <button class="btn alt" id="formatsBtn" type="button">Formats</button>
+      <button class="btn alt" id="settingsBtn" type="button">Settings</button>
+    </div>
+    <div class="rowflex">
+      <span class="toolbar-label">Send</span>
+      <button class="btn gold" id="pngBtn" type="button">PNG Image</button>
+      <button class="btn gold" id="shareBtn" type="button">Share</button>
+      <button class="btn alt" id="printBtn" type="button">Print</button>
+      <button class="btn alt" id="csvBtn" type="button">CSV Export</button>
+      <button class="btn alt" id="csvImportBtn" type="button">CSV Import</button>
+      <button class="btn alt" id="xlsxBtn" type="button">Excel Export</button>
+      <button class="btn alt" id="backupBtn" type="button">Backup</button>
+      <button class="btn alt" id="restoreBtn" type="button">Restore</button>
+      <input type="file" id="csvFile" accept=".csv,text/csv" hidden>
+      <input type="file" id="jsonFile" accept=".json,application/json" hidden>
+    </div>
+
+    <!-- columns panel -->
+    <div class="panel" id="columnsPanel" style="margin-top:14px">
+      <h2>Columns — rename, reorder, add your own</h2>
+      <div id="colList"></div>
+      <div class="rowflex" style="margin-top:12px">
+        <input type="text" id="newColName" placeholder="New column name" style="flex:1 1 160px">
+        <select id="newColType">
+          <option value="number">Number (adds up)</option>
+          <option value="text">Text</option>
+          <option value="diff">Auto − (A minus B)</option>
+          <option value="pct">Auto % (A ÷ B × 100)</option>
+        </select>
+        <select id="newColA" title="Column A"></select>
+        <select id="newColB" title="Column B"></select>
+        <button class="btn" id="addColBtn" type="button">Add Column</button>
+      </div>
+      <p class="hint">Auto columns do the maths for you: an Auto − column subtracts one number column from another (for example Target − Done = Pending); an Auto % column divides one by another (for example Done ÷ Target = Achievement %). Totals are always recalculated from the totals — never averaged, never broken.</p>
+    </div>
+
+    <!-- formats panel -->
+    <div class="panel" id="formatsPanel" style="margin-top:14px">
+      <h2>Saved formats — your layout, reusable</h2>
+      <div class="rowflex">
+        <input type="text" id="fmtName" placeholder="Format name (e.g. My Daily Sheet)" style="flex:1 1 200px">
+        <button class="btn" id="saveFmtBtn" type="button">Save Current Format</button>
+      </div>
+      <div id="fmtList" style="margin-top:8px"></div>
+      <p class="hint">A format saves your columns, section names and row names — without the numbers — so your whole layout comes back in one tap.</p>
+    </div>
+
+    <!-- settings panel -->
+    <div class="panel" id="settingsPanel" style="margin-top:14px">
+      <h2>Settings</h2>
+      <div class="rowflex">
+        <div>
+          <label class="lbl" for="thGreen">Green at or above (%)</label>
+          <input type="number" id="thGreen" min="0" max="200" style="width:110px">
+        </div>
+        <div>
+          <label class="lbl" for="thAmber">Amber at or above (%)</label>
+          <input type="number" id="thAmber" min="0" max="200" style="width:110px">
+        </div>
+      </div>
+      <p class="hint">Percentage cells change colour by these thresholds: green at or above the first number, amber at or above the second, red below that.</p>
+      <div class="rowflex" style="margin-top:10px">
+        <button class="btn danger" id="resetBtn" type="button">Reset to Sample Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== the report ===== -->
+  <div id="printHead" class="card" style="margin-bottom:12px">
+    <h2 id="printTitle" style="margin:0"></h2>
+    <div id="printDate" style="color:#667;font-weight:600"></div>
+  </div>
+  <div id="sections"></div>
+  <div class="grand" id="grandBox">
+    <h2>Grand Total — All Sections</h2>
+    <div class="g-grid" id="grandGrid"></div>
+  </div>
+</div>
+
+<section class="content">
+  <h2>How it works</h2>
+  <ol>
+    <li><strong>Make it yours (one time).</strong> Rename the sections to your hubs or portfolios, the rows to your centres or team members, and add or rename columns until the sheet looks exactly like the report your team already uses — anywhere in the world.</li>
+    <li><strong>Type two numbers a day.</strong> Enter each centre's target and how much is done. Pending and achievement % fill in by themselves, row by row, with section totals and a grand total — always correct, never a broken formula.</li>
+    <li><strong>Send it in one tap.</strong> Export a PNG picture in the familiar yellow-and-green spreadsheet style and share it to any messaging app, or print it, or save CSV/Excel files.</li>
+  </ol>
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Fully custom layout</strong> — unlimited sections, rows and columns; rename everything; reorder with one tap.</li>
+    <li><strong>Your own formulas</strong> — Auto − and Auto % columns let you decide exactly what subtracts from what, and what percentage means on your team.</li>
+    <li><strong>Automatic totals</strong> — section totals and a grand total, with percentages recalculated from totals (never averaged, never #REF!).</li>
+    <li><strong>Daily history</strong> — every day saves under its own date; open any past day from the date picker; start a New Day with yesterday's format; copy yesterday's targets in one tap.</li>
+    <li><strong>Saved formats</strong> — keep several named layouts and switch between them.</li>
+    <li><strong>Share anywhere</strong> — PNG image with one-tap share, print, CSV export/import, Excel export, JSON backup and restore.</li>
+    <li><strong>Private by design</strong> — everything happens in your browser; your figures are stored only on your device.</li>
+    <li><strong>Made for field teams everywhere</strong> — bank and microfinance branches, sales teams, school staff, delivery and service teams — any team that reports targets daily.</li>
+  </ul>
+</section>
+
+<section class="content loona-faq">
+  <h2>Frequently Asked Questions</h2>
+  <h3>Is Loona Target Tracker free?</h3>
+  <p>Yes. Loona Target Tracker is completely free — no sign-up, no subscription and no limit on sections, rows or columns.</p>
+  <h3>Where is my data stored?</h3>
+  <p>Only on your own device, in your browser's local storage. Nothing is uploaded to any server. Use the JSON backup to move your data to another phone or computer.</p>
+  <h3>Can I set my own percentage formula?</h3>
+  <p>Yes. Add an Auto % column and choose any two number columns — the tool calculates A ÷ B × 100 for every row and for the totals. You can also add an Auto Pending column that subtracts any column from any other.</p>
+  <h3>Can I use my own hub, centre and column names?</h3>
+  <p>Yes. Everything is yours to name: the report title, section (hub) names, row (service centre) names and every column heading. Add, rename, reorder or delete sections, rows and columns at any time, and save your layout as a named format to reuse.</p>
+  <h3>How do I send the daily report to my head office?</h3>
+  <p>Tap PNG Image or Share to send a picture of the report — in the same yellow-and-green style as a spreadsheet — straight to WhatsApp or any other app. You can also print it, or export CSV and Excel files.</p>
+  <h3>Does it work offline?</h3>
+  <p>Yes. After the first load the tracker works offline, and your saved reports stay on your device.</p>
+</section>
+
+<div id="loona-legal-bar">
+© 2026 Loona Automation · Contact: <a href="mailto:loonaautomation@gmail.com">loonaautomation@gmail.com</a><br>
+<a href="index.html">Home</a>·<a href="about.html">About</a>·<a href="contact.html">Contact</a>·<a href="privacy-policy.html">Privacy Policy</a>·<a href="terms.html">Terms</a>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+/* ================= CALC CORE (pure, unit-tested) ================= */
+function lttNum(v){
+  if(v===null||v===undefined) return null;
+  var s=String(v).replace(/,/g,'').trim();
+  if(s==='') return null;
+  var n=parseFloat(s);
+  return isNaN(n)?null:n;
+}
+function lttAutoValue(c, vals){
+  var a=vals[c.a], b=vals[c.b];
+  if(a===undefined||b===undefined) return undefined;
+  if(c.type==='diff'){
+    if(a===null&&b===null) return null;
+    return (a||0)-(b||0);
+  }
+  if(c.type==='pct'){
+    if(b===null||b===0) return null;
+    return (a||0)/b*100;
+  }
+  return null;
+}
+function lttResolveAutos(columns, vals){
+  var guard=columns.length+2, pass, changed, i, c, v;
+  for(pass=0; pass<guard; pass++){
+    changed=false;
+    for(i=0;i<columns.length;i++){
+      c=columns[i];
+      if((c.type==='diff'||c.type==='pct') && vals[c.id]===undefined){
+        v=lttAutoValue(c, vals);
+        if(v!==undefined){ vals[c.id]=v; changed=true; }
+      }
+    }
+    if(!changed) break;
+  }
+  columns.forEach(function(c){ if(vals[c.id]===undefined) vals[c.id]=null; });
+  return vals;
+}
+function lttRowValues(columns, cells){
+  var vals={};
+  columns.forEach(function(c){ if(c.type==='number') vals[c.id]=lttNum(cells?cells[c.id]:null); });
+  return lttResolveAutos(columns, vals);
+}
+function lttTotals(columns, rowsCells){
+  var vals={};
+  columns.forEach(function(c){
+    if(c.type==='number'){
+      var sum=0, any=false;
+      rowsCells.forEach(function(cells){ var n=lttNum(cells?cells[c.id]:null); if(n!==null){ sum+=n; any=true; } });
+      vals[c.id]=any?sum:0;
+    }
+  });
+  return lttResolveAutos(columns, vals);
+}
+function lttComputeReport(report){
+  var allCells=[];
+  var sections=report.sections.map(function(s){
+    var rowsCells=s.rows.map(function(r){ return r.cells||{}; });
+    rowsCells.forEach(function(c){ allCells.push(c); });
+    return {
+      name: s.name,
+      rows: s.rows.map(function(r){ return lttRowValues(report.columns, r.cells||{}); }),
+      totals: lttTotals(report.columns, rowsCells)
+    };
+  });
+  return { sections: sections, grand: lttTotals(report.columns, allCells) };
+}
+function lttFmtNum(n){
+  if(n===null||n===undefined) return '';
+  var r=Math.round(n*100)/100;
+  return String(r);
+}
+function lttFmtPct(n){
+  if(n===null||n===undefined) return '—';
+  return String(Math.round(n))+'%';
+}
+function lttPctClass(n, th){
+  if(n===null||n===undefined) return '';
+  if(n>=th.green) return 'pct-good';
+  if(n>=th.amber) return 'pct-warn';
+  return 'pct-bad';
+}
+/* ================= END CALC CORE ================= */
+
+/* ================= CSV CORE (pure, unit-tested) ================= */
+function lttCsvCell(v){
+  var s=(v===null||v===undefined)?'':String(v);
+  if(/[",\n\r]/.test(s)) return '"'+s.replace(/"/g,'""')+'"';
+  return s;
+}
+function lttCsvRow(arr){ return arr.map(lttCsvCell).join(','); }
+function lttParseCSV(text){
+  var rows=[], row=[], cur='', inQ=false, i, ch;
+  text=String(text).replace(/\r\n/g,'\n').replace(/\r/g,'\n');
+  for(i=0;i<text.length;i++){
+    ch=text[i];
+    if(inQ){
+      if(ch==='"'){ if(text[i+1]==='"'){ cur+='"'; i++; } else inQ=false; }
+      else cur+=ch;
+    } else {
+      if(ch==='"') inQ=true;
+      else if(ch===','){ row.push(cur); cur=''; }
+      else if(ch==='\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+      else cur+=ch;
+    }
+  }
+  if(cur!==''||row.length){ row.push(cur); rows.push(row); }
+  return rows.filter(function(r){ return !(r.length===1&&r[0]===''); });
+}
+function lttReportToCSV(report, computed){
+  var lines=[];
+  lines.push('##LOONA-TARGET-TRACKER,1');
+  lines.push('##TITLE,'+lttCsvCell(report.title||''));
+  lines.push('##DATE,'+(report.date||''));
+  var spec=report.columns.map(function(c){
+    return [c.id,c.type,c.name||'',c.a||'',c.b||''].map(encodeURIComponent).join('~');
+  }).join('|');
+  lines.push('##COLUMNS,'+spec);
+  report.sections.forEach(function(s, si){
+    lines.push('##SECTION,'+lttCsvCell(s.name));
+    lines.push(lttCsvRow(report.columns.map(function(c){ return c.name||''; })));
+    s.rows.forEach(function(r, ri){
+      lines.push(lttCsvRow(report.columns.map(function(c){
+        if(c.type==='sr') return String(ri+1);
+        if(c.type==='diff'||c.type==='pct'){
+          var v=computed.sections[si].rows[ri][c.id];
+          return c.type==='pct' ? (v===null?'':String(Math.round(v))) : lttFmtNum(v);
+        }
+        var raw=r.cells?r.cells[c.id]:'';
+        return (raw===null||raw===undefined)?'':String(raw);
+      })));
+    });
+    lines.push('##TOTAL,'+report.columns.map(function(c){
+      var v=computed.sections[si].totals[c.id];
+      if(c.type==='pct') return v===null?'':String(Math.round(v));
+      if(c.type==='number'||c.type==='diff') return lttFmtNum(v);
+      return '';
+    }).join(','));
+    lines.push('##ENDSECTION');
+  });
+  lines.push('##GRANDTOTAL,'+report.columns.map(function(c){
+    var v=computed.grand[c.id];
+    if(c.type==='pct') return v===null?'':String(Math.round(v));
+    if(c.type==='number'||c.type==='diff') return lttFmtNum(v);
+    return '';
+  }).join(','));
+  return lines.join('\n');
+}
+function lttParseCSVReport(text){
+  var rows=lttParseCSV(text);
+  if(!rows.length) return null;
+  var isOurs = rows[0][0]==='##LOONA-TARGET-TRACKER';
+  if(!isOurs){
+    /* best-effort foreign CSV: first row = headers, one section */
+    var heads=rows[0].map(function(h,i){ return h||('Column '+(i+1)); });
+    var cols=heads.map(function(h,i){
+      var numeric = rows.length>1 && rows.slice(1).every(function(r){ return r[i]===undefined||r[i]===''||lttNum(r[i])!==null; });
+      return { id:'imp'+i, name:h, type: numeric?'number':'text' };
+    });
+    var srows=rows.slice(1).map(function(r,ri){
+      var cells={};
+      cols.forEach(function(c,i){ cells[c.id]=(r[i]===undefined?'':r[i]); });
+      return { id:'impr'+ri, cells:cells };
+    });
+    return { title:'Imported Report', date:'', columns:cols, sections:[{ id:'imps', name:'Imported', rows:srows }] };
+  }
+  var title='Daily Target Report', date='', columns=null, sections=[], cur=null;
+  rows.forEach(function(r){
+    var tag=r[0];
+    if(tag==='##TITLE') title=r[1]||title;
+    else if(tag==='##DATE') date=r[1]||'';
+    else if(tag==='##COLUMNS'){
+      var spec=(r.slice(1).join(',')||'');
+      columns=spec.split('|').filter(Boolean).map(function(part){
+        var p=part.split('~').map(function(x){ try{ return decodeURIComponent(x); }catch(e){ return x; } });
+        var c={ id:p[0], type:p[1]||'text', name:p[2]||'' };
+        if(p[3]) c.a=p[3];
+        if(p[4]) c.b=p[4];
+        return c;
+      });
+    }
+    else if(tag==='##SECTION'){ cur={ id:'s'+sections.length, name:r[1]||'', rows:[], _headSeen:false }; sections.push(cur); }
+    else if(tag==='##ENDSECTION'){ cur=null; }
+    else if(tag==='##TOTAL'||tag==='##GRANDTOTAL'){ /* recomputed on load */ }
+    else if(cur){
+      if(!cur._headSeen){ cur._headSeen=true; return; }
+      if(!columns) return;
+      var cells={};
+      columns.forEach(function(c,i){
+        if(c.type==='sr'||c.type==='diff'||c.type==='pct') return;
+        cells[c.id]=(r[i]===undefined?'':r[i]);
+      });
+      cur.rows.push({ id:'r'+cur.rows.length+'_'+sections.length, cells:cells });
+    }
+  });
+  if(!columns||!sections.length) return null;
+  sections.forEach(function(s){ delete s._headSeen; });
+  return { title:title, date:date, columns:columns, sections:sections };
+}
+/* ================= END CSV CORE ================= */
+
+/* ================= DRAWING CORE (pure, unit-tested) ================= */
+function lttColWidth(c, report, computed){
+  if(c.type==='sr') return 52;
+  if(c.type==='pct') return Math.max(118, (c.name||'').length*8+24);
+  if(c.type==='number'||c.type==='diff') return Math.max(112, (c.name||'').length*8+24);
+  var max=(c.name||'').length;
+  report.sections.forEach(function(s){ s.rows.forEach(function(r){ var v=r.cells?r.cells[c.id]:''; if(v) max=Math.max(max, String(v).length); }); });
+  return Math.round(Math.max(130, Math.min(280, max*8.4+26)));
+}
+function lttFit(text, w, size){
+  var s=String(text===null||text===undefined?'':text);
+  var maxChars=Math.max(2, Math.floor(w/(size*0.6)));
+  if(s.length<=maxChars) return s;
+  return s.slice(0, maxChars-1)+'…';
+}
+function lttBuildDrawing(report, computed){
+  var cols=report.columns;
+  var widths=cols.map(function(c){ return lttColWidth(c, report, computed); });
+  var W=widths.reduce(function(a,b){ return a+b; }, 0)+4;
+  var ops=[];
+  var y=0;
+  function rect(x,yy,w,h,fill,stroke){ ops.push({k:'rect',x:x,y:yy,w:w,h:h,fill:fill||null,stroke:stroke||null}); }
+  function text(x,yy,t,size,bold,color,align){ ops.push({k:'text',x:x,y:yy,text:String(t),size:size,bold:!!bold,color:color,align:align||'left'}); }
+  /* title */
+  text(2, y+26, report.title||'Daily Target Report', 21, true, '#062e2a', 'left');
+  text(2, y+50, report.date||'', 13, false, '#556', 'left');
+  y+=62;
+  function drawHeader(){
+    var x=2;
+    rect(0, y, W, 30, '#c6e0b4', '#7a9a68');
+    cols.forEach(function(c,i){
+      text(x+widths[i]/2, y+20, lttFit(c.name, widths[i]-8, 13), 13, true, '#1c2422', 'center');
+      x+=widths[i];
+    });
+    y+=30;
+  }
+  var firstTextIdx=-1;
+  cols.forEach(function(c,i){ if(firstTextIdx<0 && c.type==='text') firstTextIdx=i; });
+  function drawRow(values, isTotal, rowIdx){
+    var h=28, x=2;
+    rect(0, y, W, h, isTotal?'#a9d18e':(rowIdx%2? '#f4f9f0':'#ffffff'), '#b9c4ad');
+    cols.forEach(function(c,i){
+      var v=values[c.id], t='';
+      if(c.type==='sr') t=isTotal?'':String(rowIdx+1);
+      else if(c.type==='pct') t=lttFmtPct(v);
+      else if(c.type==='number'||c.type==='diff') t=lttFmtNum(v);
+      else t=isTotal?(i===firstTextIdx?'TOTAL':''):(values.__text?values.__text[c.id]:'');
+      text(x+widths[i]/2, y+19, lttFit(t, widths[i]-8, 13), 13, isTotal, '#1c2422', 'center');
+      x+=widths[i];
+    });
+    y+=h;
+  }
+  report.sections.forEach(function(s, si){
+    rect(0, y, W, 34, '#ffdf00', '#b3a100');
+    text(W/2, y+23, s.name, 16, true, '#1c2422', 'center');
+    y+=34;
+    drawHeader();
+    s.rows.forEach(function(r, ri){
+      var vals={};
+      cols.forEach(function(c){ vals[c.id]=computed.sections[si].rows[ri][c.id]; });
+      vals.__text=r.cells||{};
+      drawRow(vals, false, ri);
+    });
+    var tv={}; cols.forEach(function(c){ tv[c.id]=computed.sections[si].totals[c.id]; });
+    drawRow(tv, true, 0);
+    y+=14;
+  });
+  /* grand total */
+  rect(0, y, W, 32, '#062e2a', '#062e2a');
+  text(W/2, y+22, 'GRAND TOTAL — ALL SECTIONS', 15, true, '#ffd95e', 'center');
+  y+=32;
+  drawHeader();
+  var gv={}; cols.forEach(function(c){ gv[c.id]=computed.grand[c.id]; });
+  drawRow(gv, true, 0);
+  y+=10;
+  text(2, y+16, 'Made with Loona Target Tracker — loonaautomation.github.io/loona-target-tracker', 11, false, '#667', 'left');
+  y+=24;
+  return { width: W, height: y, ops: ops };
+}
+/* ================= END DRAWING CORE ================= */
+</script>
+
+<script>
+/* ================= APP ================= */
+var KEY='lttDBv1';
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s===null||s===undefined?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function todayStr(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function shiftDate(ds, days){ var d=new Date(ds+'T00:00:00'); d.setDate(d.getDate()+days); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function prettyDate(ds){ try{ return new Date(ds+'T00:00:00').toLocaleDateString('en-GB',{weekday:'long', day:'numeric', month:'long', year:'numeric'}); }catch(e){ return ds; } }
+var toastTimer=null;
+function toast(msg){ var t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(function(){ t.classList.remove('show'); }, 3200); }
+
+function defaultColumns(){
+  return [
+    { id:'sr',     name:'Sr',                 type:'sr' },
+    { id:'name',   name:'Service Center Name', type:'text' },
+    { id:'hub',    name:'HUB',                type:'text' },
+    { id:'target', name:'Target Clients',     type:'number' },
+    { id:'done',   name:'Clients Done',       type:'number' },
+    { id:'pending',name:'Pending',            type:'diff', a:'target', b:'done' },
+    { id:'pct',    name:'Achievement %',      type:'pct',  a:'done',   b:'target' },
+    { id:'disb',   name:'Today Disbursed',    type:'number' }
+  ];
+}
+function seedRow(id, centre, hub, t, d, disb){
+  return { id:id, cells:{ name:centre, hub:hub, target:String(t), done:String(d), disb:(disb===''?'':String(disb)) } };
+}
+function seedReport(dateStr){
+  return {
+    title:'Daily Target Report', date:dateStr, columns:defaultColumns(),
+    sections:[
+      { id:'sec1', name:'Main Hub', rows:[
+        seedRow('r1','City Centre','Main Hub',100,80,12),
+        seedRow('r2','Town Centre','Main Hub',50,48,5),
+        seedRow('r3','Village Centre','Main Hub',25,25,3)
+      ]},
+      { id:'sec2', name:'Advance Portfolio', rows:[
+        seedRow('r4','City Centre','Main Hub',120,90,''),
+        seedRow('r5','Town Centre','Main Hub',60,30,''),
+        seedRow('r6','Village Centre','Main Hub',20,0,'')
+      ]}
+    ]
+  };
+}
+function seedDB(){
+  var d=todayStr(), db={ seq:100, currentDate:d, reports:{}, formats:[], thresholds:{green:90, amber:50} };
+  db.reports[d]=seedReport(d);
+  return db;
+}
+function loadDB(){
+  try{ var raw=localStorage.getItem(KEY); if(!raw) return null; var db=JSON.parse(raw); if(!db||!db.reports||!db.currentDate) return null; return db; }
+  catch(e){ return null; }
+}
+var DB=loadDB()||seedDB();
+function cur(){ return DB.reports[DB.currentDate]; }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){} }
+function nid(p){ DB.seq++; return p+DB.seq; }
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+
+/* ---------- rendering ---------- */
+var sectionsEl=$('sections');
+function cellInputHTML(c, r){
+  var v=r.cells&&r.cells[c.id]!==undefined?r.cells[c.id]:'';
+  if(c.type==='text') return '<input type="text" data-col="'+c.id+'" value="'+esc(v)+'" autocomplete="off">';
+  return '<input type="text" inputmode="decimal" data-col="'+c.id+'" value="'+esc(v)+'" autocomplete="off">';
+}
+function pctCellHTML(cls){
+  return '<div class="pct-wrap"><span class="pct-val"></span><div class="pct-bar"><div class="pct-fill"></div></div></div>';
+}
+function renderAll(){
+  var rep=cur();
+  $('reportTitle').value=rep.title||'';
+  $('reportDate').value=DB.currentDate;
+  $('printTitle').textContent=rep.title||'Daily Target Report';
+  $('printDate').textContent=prettyDate(DB.currentDate);
+  var html='';
+  rep.sections.forEach(function(s, si){
+    html+='<div class="section-block" data-sec="'+s.id+'">'
+      +'<div class="sec-head">'
+      +'<button class="btn alt small no-print" data-act="sec-up" type="button" title="Move section up">↑</button>'
+      +'<button class="btn alt small no-print" data-act="sec-down" type="button" title="Move section down">↓</button>'
+      +'<input type="text" class="sec-name" value="'+esc(s.name)+'" aria-label="Section name">'
+      +'<button class="btn alt small no-print" data-act="sec-add-row" type="button">+ Row</button>'
+      +'<button class="btn danger small no-print" data-act="sec-del" type="button" title="Delete section">✕</button>'
+      +'</div>'
+      +'<div class="table-scroll"><table class="report"><thead><tr>'
+      + rep.columns.map(function(c){ return '<th><span class="col-name">'+esc(c.name)+'</span></th>'; }).join('')
+      +'<th class="rowtools no-print"></th></tr></thead><tbody>';
+    s.rows.forEach(function(r, ri){
+      html+='<tr data-row="'+r.id+'">'
+        + rep.columns.map(function(c){
+            if(c.type==='sr') return '<td class="sr">'+(ri+1)+'</td>';
+            if(c.type==='text') return '<td class="txt">'+cellInputHTML(c, r)+'</td>';
+            if(c.type==='number') return '<td>'+cellInputHTML(c, r)+'</td>';
+            if(c.type==='pct') return '<td class="auto" data-auto="'+c.id+'">'+pctCellHTML()+'</td>';
+            return '<td class="auto" data-auto="'+c.id+'"></td>';
+          }).join('')
+        +'<td class="rowtools no-print"><button class="icon-btn" data-act="row-del" type="button" title="Delete row">✕</button></td></tr>';
+    });
+    html+='<tr class="total-row">'
+      + rep.columns.map(function(c){
+          if(c.type==='pct') return '<td class="auto" data-total-cell="'+c.id+'">'+pctCellHTML()+'</td>';
+          if(c.type==='number'||c.type==='diff') return '<td class="auto" data-total-cell="'+c.id+'"></td>';
+          return '<td></td>';
+        }).join('')
+      +'<td class="rowtools no-print"></td></tr>';
+    html+='</tbody></table></div></div>';
+  });
+  sectionsEl.innerHTML=html;
+  var firstText=rep.columns.findIndex(function(c){ return c.type==='text'; });
+  sectionsEl.querySelectorAll('tr.total-row').forEach(function(tr){
+    var idx=firstText>=0?firstText:0;
+    if(tr.children[idx]) tr.children[idx].textContent='TOTAL';
+  });
+  refreshComputed();
+}
+function refreshComputed(){
+  var rep=cur(); if(!rep) return;
+  var comp=lttComputeReport(rep), th=DB.thresholds;
+  rep.sections.forEach(function(s, si){
+    var block=sectionsEl.children[si]; if(!block) return;
+    var rows=block.querySelectorAll('tbody tr[data-row]');
+    rows.forEach(function(tr, ri){
+      rep.columns.forEach(function(c){
+        if(c.type!=='diff'&&c.type!=='pct') return;
+        var td=tr.querySelector('td[data-auto="'+c.id+'"]'); if(!td) return;
+        var v=comp.sections[si].rows[ri][c.id];
+        if(c.type==='pct'){
+          td.className='auto '+lttPctClass(v, th);
+          td.querySelector('.pct-val').textContent=lttFmtPct(v);
+          td.querySelector('.pct-fill').style.width=(v===null?0:Math.min(100, Math.max(0, v)))+'%';
+        } else {
+          td.textContent=lttFmtNum(v);
+        }
+      });
+    });
+    var tr=block.querySelector('tr.total-row');
+    if(tr){
+      rep.columns.forEach(function(c){
+        if(c.type!=='number'&&c.type!=='diff'&&c.type!=='pct') return;
+        var td=tr.querySelector('td[data-total-cell="'+c.id+'"]'); if(!td) return;
+        var v=comp.sections[si].totals[c.id];
+        if(c.type==='pct'){
+          td.className='auto '+lttPctClass(v, th);
+          td.querySelector('.pct-val').textContent=lttFmtPct(v);
+          td.querySelector('.pct-fill').style.width=(v===null?0:Math.min(100, Math.max(0, v)))+'%';
+        } else {
+          td.textContent=lttFmtNum(v);
+        }
+      });
+    }
+  });
+  var gg=$('grandGrid'), gh='';
+  rep.columns.forEach(function(c){
+    if(c.type!=='number'&&c.type!=='diff'&&c.type!=='pct') return;
+    var v=comp.grand[c.id];
+    gh+='<div class="g-item"><span>'+esc(c.name)+'</span><b>'+(c.type==='pct'?lttFmtPct(v):lttFmtNum(v))+'</b></div>';
+  });
+  gg.innerHTML=gh;
+  return comp;
+}
+
+/* ---------- model helpers ---------- */
+function secById(id){ return cur().sections.find(function(s){ return s.id===id; }); }
+function rowNameOf(rep, r){
+  var tc=rep.columns.find(function(c){ return c.type==='text'; });
+  return tc?(r.cells&&r.cells[tc.id]||''):'';
+}
+function zeroCopy(rep, dateStr){
+  var cp={ title:rep.title, date:dateStr, columns:clone(rep.columns), sections: rep.sections.map(function(s){
+    return { id:s.id, name:s.name, rows: s.rows.map(function(r){
+      var cells={};
+      rep.columns.forEach(function(c){ if(c.type==='text') cells[c.id]=(r.cells&&r.cells[c.id])||''; });
+      return { id:r.id, cells:cells };
+    })};
+  })};
+  return cp;
+}
+function switchDate(d){
+  if(!d) return;
+  if(!DB.reports[d]){ DB.reports[d]=zeroCopy(cur(), d); toast('New report started for '+prettyDate(d)+' — same format, numbers cleared.'); }
+  DB.currentDate=d; cur().date=d;
+  save(); renderAll(); renderColPanel();
+}
+
+/* ---------- events: report editing ---------- */
+sectionsEl.addEventListener('input', function(e){
+  var block=e.target.closest('.section-block'); if(!block) return;
+  var s=secById(block.getAttribute('data-sec')); if(!s) return;
+  if(e.target.classList.contains('sec-name')){ s.name=e.target.value; save(); return; }
+  var tr=e.target.closest('tr[data-row]'); if(!tr) return;
+  var colId=e.target.getAttribute('data-col'); if(!colId) return;
+  var r=s.rows.find(function(x){ return x.id===tr.getAttribute('data-row'); }); if(!r) return;
+  if(!r.cells) r.cells={};
+  r.cells[colId]=e.target.value;
+  save(); refreshComputed();
+});
+sectionsEl.addEventListener('click', function(e){
+  var btn=e.target.closest('[data-act]'); if(!btn) return;
+  var rep=cur();
+  var block=e.target.closest('.section-block'); var s=block?secById(block.getAttribute('data-sec')):null;
+  var act=btn.getAttribute('data-act'), si=rep.sections.indexOf(s);
+  if(act==='sec-del'){ if(confirm('Delete section "'+s.name+'" and all its rows?')){ rep.sections.splice(si,1); save(); renderAll(); renderColPanel(); } }
+  else if(act==='sec-up'&&si>0){ rep.sections.splice(si,1); rep.sections.splice(si-1,0,s); save(); renderAll(); }
+  else if(act==='sec-down'&&si<rep.sections.length-1){ rep.sections.splice(si,1); rep.sections.splice(si+1,0,s); save(); renderAll(); }
+  else if(act==='sec-add-row'){ s.rows.push({ id:nid('r'), cells:{} }); save(); renderAll(); }
+  else if(act==='row-del'){
+    var tr=e.target.closest('tr[data-row]');
+    var ri=s.rows.findIndex(function(x){ return x.id===tr.getAttribute('data-row'); });
+    if(ri>=0){ s.rows.splice(ri,1); save(); renderAll(); }
+  }
+});
+$('reportTitle').addEventListener('input', function(e){ cur().title=e.target.value; $('printTitle').textContent=e.target.value; save(); });
+$('reportDate').addEventListener('change', function(e){ switchDate(e.target.value); });
+$('prevDayBtn').addEventListener('click', function(){ switchDate(shiftDate(DB.currentDate,-1)); });
+$('nextDayBtn').addEventListener('click', function(){ switchDate(shiftDate(DB.currentDate, 1)); });
+$('newDayBtn').addEventListener('click', function(){
+  var t=todayStr();
+  if(DB.currentDate===t){ toast('You are already on today\'s report.'); return; }
+  switchDate(t);
+});
+$('copyTargetsBtn').addEventListener('click', function(){
+  var dates=Object.keys(DB.reports).filter(function(d){ return d<DB.currentDate; }).sort();
+  if(!dates.length){ toast('No earlier report found to copy targets from.'); return; }
+  var srcDate=dates[dates.length-1], src=DB.reports[srcDate], rep=cur();
+  var tcols=rep.columns.filter(function(c){ return /target/i.test(c.name||''); });
+  if(!tcols.length) tcols=rep.columns.filter(function(c){ return c.type==='number'; }).slice(0,1);
+  var copied=0;
+  rep.sections.forEach(function(s, si){
+    var ss=src.sections.find(function(x){ return x.name===s.name; })||src.sections[si]; if(!ss) return;
+    s.rows.forEach(function(r, ri){
+      var sr=ss.rows.find(function(x){ return rowNameOf(src, x)===rowNameOf(rep, r) && rowNameOf(rep, r)!==''; })||ss.rows[ri]; if(!sr) return;
+      tcols.forEach(function(tc){
+        var sc=src.columns.find(function(x){ return x.name===tc.name; })||src.columns.filter(function(x){ return x.type==='number'; })[rep.columns.filter(function(x){ return x.type==='number'; }).indexOf(tc)];
+        if(sc&&sr.cells&&sr.cells[sc.id]!==undefined&&sr.cells[sc.id]!==''){ if(!r.cells) r.cells={}; r.cells[tc.id]=sr.cells[sc.id]; copied++; }
+      });
+    });
+  });
+  save(); renderAll();
+  toast(copied?('Copied '+copied+' target value(s) from '+prettyDate(srcDate)+'.'):('Nothing to copy from '+prettyDate(srcDate)+'.'));
+});
+$('addSectionBtn').addEventListener('click', function(){
+  cur().sections.push({ id:nid('sec'), name:'New Section', rows:[{ id:nid('r'), cells:{} }] });
+  save(); renderAll();
+});
+
+/* ---------- panels ---------- */
+function togglePanel(id){
+  ['columnsPanel','formatsPanel','settingsPanel'].forEach(function(p){
+    if(p===id) $(p).classList.toggle('open'); else $(p).classList.remove('open');
+  });
+  if(id==='columnsPanel') renderColPanel();
+  if(id==='formatsPanel') renderFmtPanel();
+}
+$('columnsBtn').addEventListener('click', function(){ togglePanel('columnsPanel'); });
+$('formatsBtn').addEventListener('click', function(){ togglePanel('formatsPanel'); });
+$('settingsBtn').addEventListener('click', function(){ togglePanel('settingsPanel'); });
+
+function valueCols(exceptId){
+  return cur().columns.filter(function(c){ return (c.type==='number'||c.type==='diff'||c.type==='pct')&&c.id!==exceptId; });
+}
+function colOptions(sel, selected){
+  return valueCols(sel).map(function(c){ return '<option value="'+c.id+'"'+(c.id===selected?' selected':'')+'>'+esc(c.name)+'</option>'; }).join('');
+}
+function renderColPanel(){
+  var rep=cur();
+  $('colList').innerHTML=rep.columns.map(function(c){
+    var refs=rep.columns.some(function(o){ return (o.type==='diff'||o.type==='pct')&&(o.a===c.id||o.b===c.id); });
+    var auto='';
+    if(c.type==='diff'||c.type==='pct'){
+      auto='<span>A</span><select class="col-a" data-for="'+c.id+'">'+colOptions(c.id, c.a)+'</select>'
+          +'<span>'+(c.type==='diff'?'−':'÷')+'</span><select class="col-b" data-for="'+c.id+'">'+colOptions(c.id, c.b)+'</select>';
+    }
+    var typeName={sr:'Auto №', text:'Text', number:'Number', diff:'Auto −', pct:'Auto %'}[c.type]||c.type;
+    return '<div class="col-row" data-colrow="'+c.id+'">'
+      +'<button class="btn alt small" data-cact="up" type="button">↑</button>'
+      +'<button class="btn alt small" data-cact="down" type="button">↓</button>'
+      +'<input type="text" class="col-name-in" value="'+esc(c.name)+'" aria-label="Column name">'
+      +'<span class="col-type">'+typeName+'</span>'+auto
+      +'<button class="icon-btn" data-cact="del" type="button" title="'+(refs?'Used by an Auto column':'Delete column')+'">✕</button>'
+      +'</div>';
+  }).join('');
+  var vc=valueCols(null);
+  var opts=vc.map(function(c){ return '<option value="'+c.id+'">'+esc(c.name)+'</option>'; }).join('');
+  $('newColA').innerHTML=opts; $('newColB').innerHTML=opts;
+  syncNewColSelects();
+}
+function syncNewColSelects(){
+  var t=$('newColType').value, show=(t==='diff'||t==='pct');
+  $('newColA').style.display=show?'':'none';
+  $('newColB').style.display=show?'':'none';
+}
+$('newColType').addEventListener('change', syncNewColSelects);
+$('colList').addEventListener('input', function(e){
+  if(!e.target.classList.contains('col-name-in')) return;
+  var id=e.target.closest('[data-colrow]').getAttribute('data-colrow');
+  var c=cur().columns.find(function(x){ return x.id===id; });
+  if(c){ c.name=e.target.value; save(); renderAll(); }
+});
+$('colList').addEventListener('change', function(e){
+  var row=e.target.closest('[data-colrow]'); if(!row) return;
+  var c=cur().columns.find(function(x){ return x.id===row.getAttribute('data-colrow'); }); if(!c) return;
+  if(e.target.classList.contains('col-a')){ c.a=e.target.value; save(); refreshComputed(); }
+  if(e.target.classList.contains('col-b')){ c.b=e.target.value; save(); refreshComputed(); }
+});
+$('colList').addEventListener('click', function(e){
+  var btn=e.target.closest('[data-cact]'); if(!btn) return;
+  var rep=cur(), id=e.target.closest('[data-colrow]').getAttribute('data-colrow');
+  var ci=rep.columns.findIndex(function(x){ return x.id===id; }), c=rep.columns[ci], act=btn.getAttribute('data-cact');
+  if(act==='up'&&ci>0){ rep.columns.splice(ci,1); rep.columns.splice(ci-1,0,c); }
+  else if(act==='down'&&ci<rep.columns.length-1){ rep.columns.splice(ci,1); rep.columns.splice(ci+1,0,c); }
+  else if(act==='del'){
+    var refs=rep.columns.filter(function(o){ return (o.type==='diff'||o.type==='pct')&&(o.a===id||o.b===id); });
+    if(refs.length){ toast('Column "'+c.name+'" is used by Auto column "'+refs[0].name+'" — change that first.'); return; }
+    if(rep.columns.length<=2){ toast('Keep at least two columns.'); return; }
+    if(!confirm('Delete column "'+c.name+'"? Its values in this report will be removed.')) return;
+    rep.columns.splice(ci,1);
+    rep.sections.forEach(function(s){ s.rows.forEach(function(r){ if(r.cells) delete r.cells[id]; }); });
+  } else return;
+  save(); renderAll(); renderColPanel();
+});
+$('addColBtn').addEventListener('click', function(){
+  var rep=cur(), type=$('newColType').value;
+  var name=$('newColName').value.trim()||({number:'New Column', text:'New Column', diff:'Auto Difference', pct:'Auto Percent'})[type];
+  var c={ id:nid('c'), name:name, type:type };
+  if(type==='diff'||type==='pct'){
+    var a=$('newColA').value, b=$('newColB').value;
+    if(!a||!b){ toast('Add a number column first, then the Auto column can use it.'); return; }
+    c.a=a; c.b=b;
+  }
+  rep.columns.push(c);
+  $('newColName').value='';
+  save(); renderAll(); renderColPanel();
+  toast('Column "'+name+'" added.');
+});
+
+/* ---------- formats ---------- */
+function renderFmtPanel(){
+  var list=$('fmtList');
+  if(!DB.formats.length){ list.innerHTML='<p class="hint">No saved formats yet.</p>'; return; }
+  list.innerHTML=DB.formats.map(function(f, i){
+    return '<div class="fmt-row"><b>'+esc(f.name)+'</b>'
+      +'<button class="btn small" data-fact="load" data-fi="'+i+'" type="button">Load</button>'
+      +'<button class="btn danger small" data-fact="del" data-fi="'+i+'" type="button">Delete</button></div>';
+  }).join('');
+}
+$('saveFmtBtn').addEventListener('click', function(){
+  var name=$('fmtName').value.trim();
+  if(!name){ toast('Give the format a name first.'); return; }
+  var rep=cur();
+  var structure={ columns:clone(rep.columns), sections: rep.sections.map(function(s){
+    return { name:s.name, rows: s.rows.map(function(r){ return rowNameOf(rep, r); }) };
+  })};
+  var ex=DB.formats.findIndex(function(f){ return f.name===name; });
+  if(ex>=0) DB.formats[ex].structure=structure; else DB.formats.push({ name:name, structure:structure });
+  $('fmtName').value='';
+  save(); renderFmtPanel();
+  toast('Format "'+name+'" saved.');
+});
+$('fmtList').addEventListener('click', function(e){
+  var btn=e.target.closest('[data-fact]'); if(!btn) return;
+  var i=parseInt(btn.getAttribute('data-fi'),10), f=DB.formats[i]; if(!f) return;
+  if(btn.getAttribute('data-fact')==='del'){ DB.formats.splice(i,1); save(); renderFmtPanel(); return; }
+  if(!confirm('Load format "'+f.name+'"? The current layout and numbers for this date will be replaced (other dates stay saved).')) return;
+  var rep=cur(), st=f.structure, textCol=st.columns.find(function(c){ return c.type==='text'; });
+  rep.columns=clone(st.columns);
+  rep.sections=st.sections.map(function(s){
+    return { id:nid('sec'), name:s.name, rows: s.rows.map(function(rn){
+      var cells={}; if(textCol) cells[textCol.id]=rn;
+      return { id:nid('r'), cells:cells };
+    })};
+  });
+  save(); renderAll(); renderColPanel();
+  toast('Format "'+f.name+'" loaded.');
+});
+
+/* ---------- settings ---------- */
+$('thGreen').value=DB.thresholds.green;
+$('thAmber').value=DB.thresholds.amber;
+$('thGreen').addEventListener('input', function(e){ var v=parseFloat(e.target.value); if(!isNaN(v)){ DB.thresholds.green=v; save(); refreshComputed(); } });
+$('thAmber').addEventListener('input', function(e){ var v=parseFloat(e.target.value); if(!isNaN(v)){ DB.thresholds.amber=v; save(); refreshComputed(); } });
+$('resetBtn').addEventListener('click', function(){
+  if(!confirm('Reset everything to the sample data? All your saved reports and formats will be removed.')) return;
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  DB=seedDB(); save();
+  $('reportDate').value=DB.currentDate;
+  $('thGreen').value=DB.thresholds.green; $('thAmber').value=DB.thresholds.amber;
+  renderAll(); renderColPanel(); renderFmtPanel();
+  toast('Sample data restored.');
+});
+
+/* ---------- exports ---------- */
+function downloadBlob(blob, filename){
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 400);
+}
+function renderPNGBlob(cb){
+  var rep=cur(); rep.date=DB.currentDate;
+  var comp=lttComputeReport(rep);
+  var d=lttBuildDrawing(rep, comp);
+  var scale=2, cv=document.createElement('canvas');
+  cv.width=d.width*scale; cv.height=d.height*scale;
+  var ctx=cv.getContext('2d');
+  ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.scale(scale, scale);
+  d.ops.forEach(function(op){
+    if(op.k==='rect'){
+      if(op.fill){ ctx.fillStyle=op.fill; ctx.fillRect(op.x,op.y,op.w,op.h); }
+      if(op.stroke){ ctx.strokeStyle=op.stroke; ctx.lineWidth=1; ctx.strokeRect(op.x,op.y,op.w,op.h); }
+    } else {
+      ctx.fillStyle=op.color; ctx.textAlign=op.align;
+      ctx.font=(op.bold?'700 ':'400 ')+op.size+'px "Segoe UI", system-ui, sans-serif';
+      ctx.fillText(op.text, op.x, op.y);
+    }
+  });
+  if(cv.toBlob) cv.toBlob(function(b){ cb(b, cv); }, 'image/png');
+  else { var url=cv.toDataURL('image/png'); fetch(url).then(function(r){ return r.blob(); }).then(function(b){ cb(b, cv); }); }
+}
+$('pngBtn').addEventListener('click', function(){
+  renderPNGBlob(function(blob){
+    if(!blob){ toast('Image export failed in this browser.'); return; }
+    downloadBlob(blob, 'target-report-'+DB.currentDate+'.png');
+    toast('Report image downloaded.');
+  });
+});
+$('shareBtn').addEventListener('click', function(){
+  renderPNGBlob(function(blob){
+    var fname='target-report-'+DB.currentDate+'.png';
+    function fallback(){
+      if(navigator.share){ navigator.share({ title:cur().title||'Target Report', text:'Daily target report — '+prettyDate(DB.currentDate), url:'https://loonaautomation.github.io/loona-target-tracker/' }).catch(function(){}); }
+      else if(blob){ downloadBlob(blob, fname); toast('Sharing is not supported here — image downloaded instead.'); }
+    }
+    if(blob&&navigator.canShare){
+      var file=new File([blob], fname, { type:'image/png' });
+      if(navigator.canShare({ files:[file] })){
+        navigator.share({ files:[file], title:cur().title||'Target Report' }).catch(function(err){ if(err&&err.name!=='AbortError') fallback(); });
+        return;
+      }
+    }
+    fallback();
+  });
+});
+$('printBtn').addEventListener('click', function(){ window.print(); });
+$('csvBtn').addEventListener('click', function(){
+  var rep=cur(); rep.date=DB.currentDate;
+  var csv=lttReportToCSV(rep, lttComputeReport(rep));
+  downloadBlob(new Blob([csv], { type:'text/csv' }), 'target-report-'+DB.currentDate+'.csv');
+  toast('CSV downloaded.');
+});
+$('csvImportBtn').addEventListener('click', function(){ $('csvFile').click(); });
+$('csvFile').addEventListener('change', function(e){
+  var f=e.target.files[0]; if(!f) return;
+  var rd=new FileReader();
+  rd.onload=function(){
+    var parsed=lttParseCSVReport(String(rd.result));
+    if(!parsed){ toast('That CSV could not be read.'); return; }
+    if(!confirm('Import this CSV into the report for '+prettyDate(DB.currentDate)+'? Current numbers for this date will be replaced.')) return;
+    parsed.date=DB.currentDate;
+    if(!parsed.title) parsed.title=cur().title;
+    DB.reports[DB.currentDate]=parsed;
+    save(); renderAll(); renderColPanel();
+    toast('CSV imported.');
+  };
+  rd.readAsText(f);
+  e.target.value='';
+});
+var xlsxPromise=null;
+function loadXLSX(){
+  if(window.XLSX) return Promise.resolve();
+  if(!xlsxPromise){
+    xlsxPromise=new Promise(function(res, rej){
+      var sc=document.createElement('script');
+      sc.src='lib/xlsx.full.min.js'; sc.onload=res; sc.onerror=rej;
+      document.head.appendChild(sc);
+    });
+  }
+  return xlsxPromise;
+}
+$('xlsxBtn').addEventListener('click', function(){
+  loadXLSX().then(function(){
+    var rep=cur(); rep.date=DB.currentDate;
+    var comp=lttComputeReport(rep);
+    var wb=XLSX.utils.book_new();
+    var used={};
+    rep.sections.forEach(function(s, si){
+      var aoa=[[s.name]];
+      aoa.push(rep.columns.map(function(c){ return c.name||''; }));
+      s.rows.forEach(function(r, ri){
+        aoa.push(rep.columns.map(function(c){
+          if(c.type==='sr') return ri+1;
+          if(c.type==='number'){ var n=lttNum(r.cells?r.cells[c.id]:null); return n===null?'':n; }
+          if(c.type==='diff'){ var v=comp.sections[si].rows[ri][c.id]; return v===null?'':Math.round(v*100)/100; }
+          if(c.type==='pct'){ var v2=comp.sections[si].rows[ri][c.id]; return v2===null?'':Math.round(v2); }
+          return (r.cells&&r.cells[c.id])||'';
+        }));
+      });
+      var firstText=rep.columns.findIndex(function(c){ return c.type==='text'; });
+      aoa.push(rep.columns.map(function(c, ci){
+        if(ci===firstText) return 'TOTAL';
+        var v=comp.sections[si].totals[c.id];
+        if(c.type==='pct') return v===null?'':Math.round(v);
+        if(c.type==='number'||c.type==='diff') return v===null?'':Math.round(v*100)/100;
+        return '';
+      }));
+      var name=(s.name||'Section').replace(/[\\\/\?\*\[\]\:]/g,' ').slice(0,28)||'Section';
+      var base=name, k=2; while(used[name]){ name=base+' '+(k++); } used[name]=1;
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(aoa), name);
+    });
+    XLSX.writeFile(wb, 'target-report-'+DB.currentDate+'.xlsx');
+    toast('Excel file downloaded.');
+  }).catch(function(){ toast('Excel export could not load. Check your connection and try again.'); });
+});
+$('backupBtn').addEventListener('click', function(){
+  downloadBlob(new Blob([JSON.stringify(DB, null, 2)], { type:'application/json' }), 'target-tracker-backup.json');
+  toast('Backup downloaded — keep it safe.');
+});
+$('restoreBtn').addEventListener('click', function(){ $('jsonFile').click(); });
+$('jsonFile').addEventListener('change', function(e){
+  var f=e.target.files[0]; if(!f) return;
+  var rd=new FileReader();
+  rd.onload=function(){
+    try{
+      var obj=JSON.parse(String(rd.result));
+      if(!obj||!obj.reports||typeof obj.reports!=='object') throw new Error('bad');
+      if(!obj.formats) obj.formats=[];
+      if(!obj.thresholds) obj.thresholds={green:90, amber:50};
+      if(!obj.seq) obj.seq=1000;
+      if(!obj.reports[obj.currentDate]) obj.currentDate=Object.keys(obj.reports).sort().pop()||todayStr();
+      if(!obj.reports[obj.currentDate]){ obj.reports[obj.currentDate]=seedReport(obj.currentDate); }
+      DB=obj; save();
+      $('thGreen').value=DB.thresholds.green; $('thAmber').value=DB.thresholds.amber;
+      renderAll(); renderColPanel(); renderFmtPanel();
+      toast('Backup restored.');
+    }catch(err){ toast('That backup file could not be read.'); }
+  };
+  rd.readAsText(f);
+  e.target.value='';
+});
+
+/* ---------- init ---------- */
+save();
+renderAll();
+renderColPanel();
+if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
+</script>
+</body>
+</html>

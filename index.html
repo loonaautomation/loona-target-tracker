@@ -658,6 +658,48 @@ function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){}
 function nid(p){ DB.seq++; return p+DB.seq; }
 function clone(o){ return JSON.parse(JSON.stringify(o)); }
 
+/* ---------- one-time migration: sample inherited from the first version ----------
+   The first version of this app opened with the sample sheet pre-filled and
+   saved it as if it were the visitor's own data, so people upgrading still
+   see that sample (the "Advance Portfolio" sheet with its numbers) instead of
+   the new blank start. If a saved report is EXACTLY that untouched sample —
+   deep-equal in every title, column, section, row and value — it was never
+   the user's own work, so it is replaced with the new blank sheet. If even
+   one character differs anywhere, the report is the user's own data and is
+   left completely untouched. The sample itself stays one tap away on the
+   Load Example button, so nothing is ever lost. Runs once only: a flag is
+   stored, so a sample the user deliberately loads later is never removed. */
+var SAMPLE_MIG_KEY='lttSampleMigV1';
+function deepEqObj(a, b){
+  if(a===b) return true;
+  if(typeof a!=='object'||typeof b!=='object'||a===null||b===null) return false;
+  var ka=Object.keys(a), kb=Object.keys(b), i;
+  if(ka.length!==kb.length) return false;
+  for(i=0;i<ka.length;i++){
+    if(!Object.prototype.hasOwnProperty.call(b, ka[i])) return false;
+    if(!deepEqObj(a[ka[i]], b[ka[i]])) return false;
+  }
+  return true;
+}
+function isOldSampleReport(rep, dateKey){
+  if(!rep||typeof rep!=='object') return false;
+  if(deepEqObj(rep, seedReport(dateKey))) return true;
+  if(rep.date && rep.date!==dateKey && deepEqObj(rep, seedReport(rep.date))) return true;
+  return false;
+}
+function migrateInheritedSample(){
+  var already=false;
+  try{ already=!!localStorage.getItem(SAMPLE_MIG_KEY); }catch(e){}
+  if(already) return;
+  var changed=false;
+  Object.keys(DB.reports).forEach(function(dk){
+    if(isOldSampleReport(DB.reports[dk], dk)){ DB.reports[dk]=blankReport(dk); changed=true; }
+  });
+  if(changed) save();
+  try{ localStorage.setItem(SAMPLE_MIG_KEY, '1'); }catch(e){}
+}
+migrateInheritedSample();
+
 /* ---------- rendering ---------- */
 var sectionsEl=$('sections');
 function cellInputHTML(c, r){

@@ -45,6 +45,8 @@
     font: inherit; font-size: 1rem; padding: 9px 10px; border: 1.5px solid #c9c2a8; border-radius: 9px; background: #fff; color: #1c2422; min-height: 44px;
   }
   input:focus, select:focus { outline: 2px solid #0a6e5f; outline-offset: 1px; border-color: #0a6e5f; }
+  input::placeholder { color: #a79d7e; opacity: 1; font-weight: 400; }
+  .sec-head input::placeholder { color: #8a7d3c; }
   #reportTitle { flex: 1 1 260px; font-weight: 700; font-size: 1.08rem; }
   .btn { font: inherit; font-weight: 700; font-size: .93rem; border: 0; border-radius: 9px; padding: 11px 16px; min-height: 44px; cursor: pointer; background: #062e2a; color: #ffd95e; }
   .btn:hover { background: #0a443d; }
@@ -155,7 +157,7 @@
     <div class="rowflex">
       <div style="flex:1 1 260px">
         <label class="lbl" for="reportTitle">Report title</label>
-        <input type="text" id="reportTitle" value="Daily Target Report" autocomplete="off">
+        <input type="text" id="reportTitle" placeholder="Report title" autocomplete="off">
       </div>
       <div>
         <label class="lbl" for="reportDate">Report date</label>
@@ -170,6 +172,8 @@
       <span class="toolbar-label">Day</span>
       <button class="btn" id="newDayBtn" type="button">New Day</button>
       <button class="btn alt" id="copyTargetsBtn" type="button">Copy Yesterday's Targets</button>
+      <button class="btn alt" id="loadExampleBtn" type="button">Load Example</button>
+      <button class="btn danger" id="clearAllBtn" type="button">New Blank Sheet</button>
     </div>
     <div class="rowflex">
       <span class="toolbar-label">Build</span>
@@ -191,6 +195,7 @@
       <input type="file" id="csvFile" accept=".csv,text/csv" hidden>
       <input type="file" id="jsonFile" accept=".json,application/json" hidden>
     </div>
+    <p class="hint">Every box is ready to type in — tap any box and just start writing: your text replaces what is there, and the light grey hints disappear as you type. Nothing ever needs erasing. Use <b>Load Example</b> to see a filled sheet, or <b>New Blank Sheet</b> to clear this date completely.</p>
 
     <!-- columns panel -->
     <div class="panel" id="columnsPanel" style="margin-top:14px">
@@ -627,11 +632,27 @@ function seedDB(){
   db.reports[d]=seedReport(d);
   return db;
 }
+/* A brand-new sheet starts EMPTY — just the clean frame and light placeholder
+   hints. The sample lives behind the Load Example button, never pre-filled. */
+function blankReport(dateStr){
+  return {
+    title:'', date:dateStr, columns:defaultColumns(),
+    sections:[
+      { id:'sec1', name:'', rows:[ { id:'r1', cells:{} }, { id:'r2', cells:{} }, { id:'r3', cells:{} } ] },
+      { id:'sec2', name:'', rows:[ { id:'r4', cells:{} }, { id:'r5', cells:{} }, { id:'r6', cells:{} } ] }
+    ]
+  };
+}
+function freshDB(){
+  var d=todayStr(), db={ seq:100, currentDate:d, reports:{}, formats:[], thresholds:{green:90, amber:50} };
+  db.reports[d]=blankReport(d);
+  return db;
+}
 function loadDB(){
   try{ var raw=localStorage.getItem(KEY); if(!raw) return null; var db=JSON.parse(raw); if(!db||!db.reports||!db.currentDate) return null; return db; }
   catch(e){ return null; }
 }
-var DB=loadDB()||seedDB();
+var DB=loadDB()||freshDB();
 function cur(){ return DB.reports[DB.currentDate]; }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){} }
 function nid(p){ DB.seq++; return p+DB.seq; }
@@ -641,8 +662,9 @@ function clone(o){ return JSON.parse(JSON.stringify(o)); }
 var sectionsEl=$('sections');
 function cellInputHTML(c, r){
   var v=r.cells&&r.cells[c.id]!==undefined?r.cells[c.id]:'';
-  if(c.type==='text') return '<input type="text" data-col="'+c.id+'" value="'+esc(v)+'" autocomplete="off">';
-  return '<input type="text" inputmode="decimal" data-col="'+c.id+'" value="'+esc(v)+'" autocomplete="off">';
+  var ph=' placeholder="'+esc(c.name||'')+'"';
+  if(c.type==='text') return '<input type="text" data-col="'+c.id+'" value="'+esc(v)+'"'+ph+' autocomplete="off">';
+  return '<input type="text" inputmode="decimal" data-col="'+c.id+'" value="'+esc(v)+'"'+ph+' autocomplete="off">';
 }
 function pctCellHTML(cls){
   return '<div class="pct-wrap"><span class="pct-val"></span><div class="pct-bar"><div class="pct-fill"></div></div></div>';
@@ -659,7 +681,7 @@ function renderAll(){
       +'<div class="sec-head">'
       +'<button class="btn alt small no-print" data-act="sec-up" type="button" title="Move section up">↑</button>'
       +'<button class="btn alt small no-print" data-act="sec-down" type="button" title="Move section down">↓</button>'
-      +'<input type="text" class="sec-name" value="'+esc(s.name)+'" aria-label="Section name">'
+      +'<input type="text" class="sec-name" value="'+esc(s.name)+'" placeholder="Section name" aria-label="Section name">'
       +'<button class="btn alt small no-print" data-act="sec-add-row" type="button">+ Row</button>'
       +'<button class="btn danger small no-print" data-act="sec-del" type="button" title="Delete section">✕</button>'
       +'</div>'
@@ -820,8 +842,43 @@ $('copyTargetsBtn').addEventListener('click', function(){
   toast(copied?('Copied '+copied+' target value(s) from '+prettyDate(srcDate)+'.'):('Nothing to copy from '+prettyDate(srcDate)+'.'));
 });
 $('addSectionBtn').addEventListener('click', function(){
-  cur().sections.push({ id:nid('sec'), name:'New Section', rows:[{ id:nid('r'), cells:{} }] });
+  cur().sections.push({ id:nid('sec'), name:'', rows:[{ id:nid('r'), cells:{} }] });
   save(); renderAll();
+});
+
+/* ---------- tap-to-replace: focusing a box selects its text, so typing
+   replaces it at once — nothing ever needs erasing first ---------- */
+document.addEventListener('focusin', function(e){
+  var t=e.target;
+  if(!t||t.tagName!=='INPUT') return;
+  if(t.type!=='text'&&t.type!=='number') return;
+  try{ t.select(); }catch(err){}
+  setTimeout(function(){ try{ t.select(); }catch(err){} }, 0);
+});
+
+/* ---------- sample on demand + blank sheet ---------- */
+function reportHasData(rep){
+  if(!rep) return false;
+  if(rep.title&&rep.title.trim()) return true;
+  return rep.sections.some(function(s){
+    if(s.name&&s.name.trim()) return true;
+    return s.rows.some(function(r){
+      if(!r.cells) return false;
+      return Object.keys(r.cells).some(function(k){ return String(r.cells[k]).trim()!==''; });
+    });
+  });
+}
+$('loadExampleBtn').addEventListener('click', function(){
+  if(reportHasData(cur()) && !confirm('Load the example sheet for '+prettyDate(DB.currentDate)+'? It will replace what is on this date now — your other dates and saved formats stay untouched.')) return;
+  DB.reports[DB.currentDate]=seedReport(DB.currentDate);
+  save(); renderAll(); renderColPanel();
+  toast('Example loaded — tap any box and type to make it yours.');
+});
+$('clearAllBtn').addEventListener('click', function(){
+  if(!confirm('Start a completely blank sheet for '+prettyDate(DB.currentDate)+'? Sections, rows, columns and numbers for this date will be cleared. Other dates and saved formats stay untouched.')) return;
+  DB.reports[DB.currentDate]=blankReport(DB.currentDate);
+  save(); renderAll(); renderColPanel();
+  toast('Blank sheet ready — just start typing.');
 });
 
 /* ---------- panels ---------- */

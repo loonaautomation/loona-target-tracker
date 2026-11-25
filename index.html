@@ -8,22 +8,22 @@
 <title>Free Daily Target Tracker for Teams — Target vs Achievement Report | Loona</title>
 <meta name="description" content="Free daily target tracker for any team, anywhere: set your own hubs, centres and columns, enter targets and done figures — pending and achievement % calculate automatically. Data stays on your device.">
 <meta name="keywords" content="target tracker, daily target report, team performance tracker, target vs achievement, branch report, sales target tracker, hub report, pending tracker">
-<link rel="canonical" href="https://loonaautomation.github.io/loona-target-tracker/">
+<link rel="canonical" href="https://tracker.loonaautomation.com/">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#062e2a">
 <meta property="og:title" content="Loona Target Tracker — Daily Target vs Achievement Report">
 <meta property="og:description" content="Build your own daily team report: your hubs, your centres, your columns. Pending and percentages calculate themselves. Free, private, no sign-up.">
-<meta property="og:image" content="https://loonaautomation.github.io/loona-target-tracker/og-image.jpg">
+<meta property="og:image" content="https://tracker.loonaautomation.com/og-image.jpg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Loona Automation">
-<meta property="og:url" content="https://loonaautomation.github.io/loona-target-tracker/">
+<meta property="og:url" content="https://tracker.loonaautomation.com/">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Target Tracker","url":"https://loonaautomation.github.io/loona-target-tracker/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free daily target-vs-achievement tracker for teams anywhere in the world — branches, sales teams, school staff and field teams. Fully customisable sections, rows and columns with automatic pending and percentage calculations. All data stays on the user's device."}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Loona Target Tracker","url":"https://tracker.loonaautomation.com/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free daily target-vs-achievement tracker for teams anywhere in the world — branches, sales teams, school staff and field teams. Fully customisable sections, rows and columns with automatic pending and percentage calculations. All data stays on the user's device."}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Loona Automation","item":"https://loonaautomation.github.io/"},{"@type":"ListItem","position":2,"name":"Loona Target Tracker","item":"https://loonaautomation.github.io/loona-target-tracker/"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Loona Automation","item":"https://loonaautomation.github.io/"},{"@type":"ListItem","position":2,"name":"Loona Target Tracker","item":"https://tracker.loonaautomation.com/"}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Loona Target Tracker free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Loona Target Tracker is completely free — no sign-up, no subscription and no limit on sections, rows or columns."}},{"@type":"Question","name":"Where is my data stored?","acceptedAnswer":{"@type":"Answer","text":"Only on your own device, in your browser's local storage. Nothing is uploaded to any server. Use the JSON backup to move your data to another phone or computer."}},{"@type":"Question","name":"Can I set my own percentage formula?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add an Auto % column and choose any two number columns — the tool calculates A ÷ B × 100 for every row and for the totals. You can also add an Auto Pending column that subtracts any column from any other."}},{"@type":"Question","name":"Can I use my own hub, centre and column names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything is yours to name: the report title, section (hub) names, row (service centre) names and every column heading. Add, rename, reorder or delete sections, rows and columns at any time, and save your layout as a named format to reuse."}},{"@type":"Question","name":"How do I send the daily report to my head office?","acceptedAnswer":{"@type":"Answer","text":"Tap PNG Image or Share to send a picture of the report — in the same yellow-and-green style as a spreadsheet — straight to WhatsApp. You can also print it, or export CSV and Excel files."}},{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. After the first load the tracker works offline, and your saved reports stay on your device."}}]}
@@ -1138,7 +1138,7 @@ $('shareBtn').addEventListener('click', function(){
   renderPNGBlob(function(blob){
     var fname='target-report-'+DB.currentDate+'.png';
     function fallback(){
-      if(navigator.share){ navigator.share({ title:cur().title||'Target Report', text:'Daily target report — '+prettyDate(DB.currentDate), url:'https://loonaautomation.github.io/loona-target-tracker/' }).catch(function(){}); }
+      if(navigator.share){ navigator.share({ title:cur().title||'Target Report', text:'Daily target report — '+prettyDate(DB.currentDate), url:'https://tracker.loonaautomation.com/' }).catch(function(){}); }
       else if(blob){ downloadBlob(blob, fname); toast('Sharing is not supported here — image downloaded instead.'); }
     }
     if(blob&&navigator.canShare){

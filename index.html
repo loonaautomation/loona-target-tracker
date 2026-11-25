@@ -581,7 +581,7 @@ function lttBuildDrawing(report, computed){
   var gv={}; cols.forEach(function(c){ gv[c.id]=computed.grand[c.id]; });
   drawRow(gv, true, 0);
   y+=10;
-  text(2, y+16, 'Made with Loona Target Tracker — loonaautomation.github.io/loona-target-tracker', 11, false, '#667', 'left');
+  text(2, y+16, 'Made with Loona Target Tracker — tracker.loonaautomation.com', 11, false, '#667', 'left');
   y+=24;
   return { width: W, height: y, ops: ops };
 }
